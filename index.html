@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INGESA | Ingeniería en Soluciones Agrícolas en Oaxaca</title>
+  <meta name="description" content="INGESA ofrece proyectos de frutales, plántulas de hortalizas para invernaderos y soluciones agrícolas sostenibles en Oaxaca y Puebla.">
+  <meta name="keywords" content="INGESA, ingeniería agrícola, soluciones agrícolas, aguacate Hass, plántulas de hortalizas, frutales, Cuicatlán Oaxaca">
+  <meta property="og:title" content="INGESA | Ingeniería en Soluciones Agrícolas">
+  <meta property="og:description" content="Soluciones agrícolas para frutales, hortalizas e invernaderos con enfoque sostenible y asesoría especializada.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/hero-aguacate-hass.jpg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════
+       LOADER
+  ══════════════════════════════════════════════════════ -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-bulb">
+      <img src="assets/img/logo-ingesa.png" alt="">
+    </div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    <span class="loader-text">Preparando cultivo...</span>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════════════════ -->
+  <header id="navbar" role="banner">
+    <div class="container">
+      <div class="nav-inner">
+
+        <a href="#hero" class="nav-logo" aria-label="INGESA — inicio">
+          <div class="nav-logo-icon" aria-hidden="true">
+            <img src="assets/img/logo-ingesa.png" alt="">
+          </div>
+          <div class="nav-logo-copy">
+            <span>INGESA</span>
+            <span>Soluciones Agrícolas</span>
+          </div>
+        </a>
+
+        <nav aria-label="Navegación principal">
+          <ul class="nav-links">
+            <li><a href="#why">Ventajas</a></li>
+            <li><a href="#ambientes">Soluciones</a></li>
+            <li><a href="#proceso">Proceso</a></li>
+            <li><a href="#producto">Cultivos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <a href="#contacto" class="btn-gold nav-cta" style="font-size:13px; padding:12px 26px;">
+          Solicitar Cotización
+        </a>
+
+        <button class="hamburger" id="hamburger"
+                aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mob-menu" aria-label="Menú móvil">
+      <a href="#why">Ventajas</a>
+      <a href="#ambientes">Soluciones</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#producto">Cultivos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto">Solicitar Cotización →</a>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════════ -->
+  <main>
+    <section id="hero" aria-labelledby="hero-heading">
+
+      <!-- Parallax background image (fixed) -->
+      <div class="hero-bg" aria-hidden="true"></div>
+      <!-- Dark overlays -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <!-- Grid texture -->
+      <div class="hero-grid" aria-hidden="true"></div>
+      <!-- Canvas particle animation -->
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+      <!-- Light shafts -->
+      <div class="hero-rays" aria-hidden="true">
+        <div class="hero-ray r1"></div>
+        <div class="hero-ray r2"></div>
+        <div class="hero-ray r3"></div>
+        <div class="hero-ray r4"></div>
+        <div class="hero-ray r5"></div>
+      </div>
+      <!-- Film grain overlay -->
+      <div class="hero-grain" aria-hidden="true"></div>
+      <!-- One-shot scan reveal -->
+      <div class="hero-scanline" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-content">
+
+          <!-- Live badge -->
+          <div class="hero-badge" id="hero-badge" aria-hidden="true">
+            <div class="badge-dot"></div>
+            Ingeniería agrícola · Frutales · Hortalizas
+          </div>
+
+          <!-- Animated title -->
+          <h1 class="hero-title" id="hero-heading">
+            <span class="line"><span>Productividad</span></span>
+            <span class="line"><span>agrícola con</span></span>
+            <span class="line"><span class="accent">visión sostenible.</span></span>
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="hero-sub" id="hero-sub">
+            En <strong>INGESA</strong> desarrollamos soluciones agrícolas para agricultores y empresas agroindustriales que buscan optimizar recursos, elevar su producción y adoptar prácticas responsables con el campo.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero-ctas" id="hero-ctas">
+            <a href="#contacto" class="btn-gold">
+              Solicitar Cotización
+              <i class="fa-solid fa-arrow-right" style="font-size:12px;"></i>
+            </a>
+            <a href="#ambientes" class="btn-outline">
+              <i class="fa-solid fa-seedling" style="font-size:15px; color:var(--leaf);"></i>
+              Ver Soluciones
+            </a>
+          </div>
+
+          <!-- Trust bar -->
+          <div class="hero-trust" id="hero-trust" aria-label="Credenciales">
+            <div class="trust-item">
+              <i class="fa-solid fa-leaf"></i>
+              Enfoque sostenible
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+              <i class="fa-solid fa-tractor"></i>
+              Ingeniería aplicada
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+              <i class="fa-solid fa-location-dot"></i>
+              Oaxaca y Puebla
+            </div>
+          </div>
+
+        </div><!-- /.hero-content -->
+      </div>
+
+      <!-- Scroll cue -->
+      <div class="scroll-cue" aria-hidden="true">
+        <div class="scroll-mouse">
+          <div class="scroll-mouse-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         MARQUEE
+    ══════════════════════════════════════════════════ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-inner" id="marquee"></div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════
+         WHY — Features
+    ══════════════════════════════════════════════════ -->
+    <section id="why" aria-labelledby="why-heading">
+      <div class="container">
+
+        <div class="why-header">
+          <div class="reveal">
+            <div class="label">La diferencia INGESA</div>
+            <h2 class="why-quote" id="why-heading">
+              La tierra responde mejor cuando la tecnología,
+              <em>la experiencia y el cuidado trabajan juntos.</em>
+            </h2>
+          </div>
+          <p class="why-sub reveal d2">
+            Acompañamos proyectos agrícolas con una mirada integral: selección de cultivos, plántulas, asesoría y soluciones pensadas para producir más con recursos mejor aprovechados.
+          </p>
+        </div>
+
+        <div class="features-grid">
+
+          <div class="f-card reveal">
+            <div class="f-num" aria-hidden="true">01</div>
+            <div class="f-icon" aria-hidden="true">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <h3>Proyectos Productivos</h3>
+            <p>Soluciones para frutales y hortalizas con enfoque técnico, planeación clara y orientación a resultados medibles en campo.</p>
+          </div>
+
+          <div class="f-card reveal d1">
+            <div class="f-num" aria-hidden="true">02</div>
+            <div class="f-icon" aria-hidden="true">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <h3>Agricultura Responsable</h3>
+            <p>Impulsamos prácticas sostenibles que cuidan el suelo, el agua y el entorno donde se desarrolla cada cultivo.</p>
+          </div>
+
+          <div class="f-card reveal d2">
+            <div class="f-num" aria-hidden="true">03</div>
+            <div class="f-icon" aria-hidden="true">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3>Optimización de Recursos</h3>
+            <p>Ayudamos a tomar mejores decisiones para elevar productividad, reducir desperdicios y aprovechar cada etapa del ciclo agrícola.</p>
+          </div>
+
+          <div class="f-card reveal d3">
+            <div class="f-num" aria-hidden="true">04</div>
+            <div class="f-icon" aria-hidden="true">
+              <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+            <h3>Servicio Integral</h3>
+            <p>Atención cercana para agricultores y empresas agroindustriales, desde la asesoría inicial hasta el seguimiento del proyecto.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         AMBIENTES — Tipos de solución
+    ══════════════════════════════════════════════════ -->
+    <section id="ambientes" aria-labelledby="amb-heading">
+      <div class="container">
+
+        <div class="ambientes-top">
+          <div class="reveal">
+            <div class="label">Soluciones agrícolas</div>
+            <h2 class="section-title" id="amb-heading">
+              Cada cultivo exige<br>
+              <span class="gold">una estrategia propia</span>
+            </h2>
+            <p style="color:var(--gray); margin-top:16px; font-size:15.5px; max-width:440px; line-height:1.7;">
+              Integramos conocimiento técnico y experiencia local para proyectos de frutales, hortalizas e invernaderos.
+            </p>
+          </div>
+          <div class="reveal d2">
+            <span class="ambiente-pill">Ingeniería + campo</span>
+          </div>
+        </div>
+
+        <div class="ambientes-grid">
+
+          <!-- Frutales -->
+          <div class="amb-card reveal">
+            <img class="amb-img"
+              src="assets/img/vivero-frutales-ingesa.jpg"
+              alt="Vivero de árboles frutales desarrollado por INGESA">
+            <div class="amb-overlay">
+              <div class="amb-icon-wrap"
+                   style="background:rgba(32,111,55,0.18); border-color:rgba(121,168,67,0.45);"
+                   aria-hidden="true">
+                <i class="fa-solid fa-tree" style="color:#b9d870;"></i>
+              </div>
+              <h3>Proyectos de Frutales</h3>
+              <p>Aguacate Hass, durazno, limón, naranja, manzana, mango, pera y café Sarchimor.</p>
+              <div class="amb-temp">Producción · Adaptación · Seguimiento</div>
+            </div>
+          </div>
+
+          <!-- Hortalizas -->
+          <div class="amb-card reveal d1">
+            <img class="amb-img"
+              src="assets/img/plantulas-hortalizas-invernadero.jpg"
+              alt="Plántulas de hortalizas para invernadero">
+            <div class="amb-overlay">
+              <div class="amb-icon-wrap"
+                   style="background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.35);"
+                   aria-hidden="true">
+                <i class="fa-solid fa-pepper-hot" style="color:white;"></i>
+              </div>
+              <h3>Plántulas de Hortalizas</h3>
+              <p>Producción orientada a invernaderos: jitomate, cebolla y chile para proyectos agrícolas productivos.</p>
+              <div class="amb-temp">Invernadero · Vigor · Uniformidad</div>
+            </div>
+          </div>
+
+          <!-- Tecnología -->
+          <div class="amb-card reveal d2">
+            <img class="amb-img"
+              src="assets/img/floracion-aguacate-ingesa.jpg"
+              alt="Floración de aguacate en proyecto agrícola">
+            <div class="amb-overlay">
+              <div class="amb-icon-wrap"
+                   style="background:rgba(245,162,38,0.18); border-color:rgba(245,162,38,0.45);"
+                   aria-hidden="true">
+                <i class="fa-solid fa-sun" style="color:#f7c65f;"></i>
+              </div>
+              <h3>Asesoría Técnica</h3>
+              <p>Evaluamos objetivos, recursos y condiciones de cultivo para proponer soluciones agrícolas viables.</p>
+              <div class="amb-temp">Diagnóstico · Planeación · Mejora continua</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         PROCESO — How we work
+    ══════════════════════════════════════════════════ -->
+    <section id="proceso" aria-labelledby="proceso-heading">
+      <div class="container">
+
+        <div class="proceso-header reveal">
+          <div class="label">Cómo trabajamos</div>
+          <h2 class="section-title" id="proceso-heading">
+            Del diagnóstico al campo, <span class="gold">con método</span>
+          </h2>
+          <p>Convertimos la necesidad del productor en una ruta clara para elegir, establecer y mejorar proyectos agrícolas.</p>
+        </div>
+
+        <div class="proceso-grid">
+
+          <div class="proceso-step reveal">
+            <div class="step-number">Paso 01</div>
+            <h3>Diagnóstico & Asesoría</h3>
+            <p>Analizamos el cultivo, ubicación, recursos disponibles y objetivo productivo para recomendar la solución adecuada.</p>
+          </div>
+
+          <div class="proceso-step reveal d1">
+            <div class="step-number">Paso 02</div>
+            <h3>Propuesta a Medida</h3>
+            <p>Definimos frutales, hortalizas, plántulas o acciones técnicas según las condiciones reales del proyecto.</p>
+          </div>
+
+          <div class="proceso-step reveal d2">
+            <div class="step-number">Paso 03</div>
+            <h3>Implementación & Seguimiento</h3>
+            <p>Acompañamos el avance con orientación práctica para sostener productividad y buenas prácticas agrícolas.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         PRODUCTO ESTRELLA
+    ══════════════════════════════════════════════════ -->
+    <section id="producto" aria-labelledby="prod-heading">
+      <div class="container">
+        <div class="producto-wrap">
+
+          <!-- Info -->
+          <div class="reveal">
+            <div class="label">Cultivos y oferta</div>
+            <h2 class="section-title" id="prod-heading">
+              Proyectos de frutales y<br>
+              <span class="gold">hortalizas para invernaderos</span>
+            </h2>
+            <p class="producto-lead">
+              INGESA trabaja con una oferta enfocada en cultivos de alto valor y plántulas para productores que buscan establecer proyectos con bases técnicas sólidas.
+            </p>
+
+            <ul class="feature-rows" aria-label="Cultivos y soluciones de INGESA">
+              <li class="f-row">
+                <div class="f-row-icon" aria-hidden="true"><i class="fa-solid fa-seedling"></i></div>
+                <div>
+                  <h4>Frutales principales</h4>
+                  <p>Aguacate Hass, durazno, limón, naranja, manzanas, mango petacón y ataúlfo, peras y café Sarchimor.</p>
+                </div>
+              </li>
+              <li class="f-row">
+                <div class="f-row-icon" aria-hidden="true"><i class="fa-solid fa-warehouse"></i></div>
+                <div>
+                  <h4>Hortalizas para invernadero</h4>
+                  <p>Plántulas de jitomate, cebolla y chile para proyectos productivos bajo condiciones controladas.</p>
+                </div>
+              </li>
+              <li class="f-row">
+                <div class="f-row-icon" aria-hidden="true"><i class="fa-solid fa-droplet"></i></div>
+                <div>
+                  <h4>Uso eficiente de recursos</h4>
+                  <p>Soluciones pensadas para optimizar agua, suelo, manejo y decisiones de producción.</p>
+                </div>
+              </li>
+              <li class="f-row">
+                <div class="f-row-icon" aria-hidden="true"><i class="fa-solid fa-earth-americas"></i></div>
+                <div>
+                  <h4>Compromiso sostenible</h4>
+                  <p>Prácticas agrícolas responsables que buscan productividad sin perder de vista el bienestar del medio ambiente.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="specs-bar" role="list" aria-label="Datos de oferta agrícola">
+              <div class="spec-cell" role="listitem">
+                <span class="spec-val">8</span>
+                <span class="spec-name">Frutales</span>
+              </div>
+              <div class="spec-cell" role="listitem">
+                <span class="spec-val">3</span>
+                <span class="spec-name">Hortalizas</span>
+              </div>
+              <div class="spec-cell" role="listitem">
+                <span class="spec-val">5</span>
+                <span class="spec-name">Zonas</span>
+              </div>
+              <div class="spec-cell" role="listitem">
+                <span class="spec-val">1</span>
+                <span class="spec-name">Aliado técnico</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual -->
+          <div class="reveal d2">
+            <div class="panel-scene">
+              <div class="led-panel-body"
+                   role="img" aria-label="Aguacate Hass en proyecto agrícola de INGESA">
+              </div>
+              <div class="p-badge pb-tl" aria-hidden="true">
+                <div class="p-badge-dot"></div>
+                Aguacate Hass · Frutales
+              </div>
+              <div class="p-badge pb-br" aria-hidden="true">
+                <i class="fa-solid fa-leaf" style="color:var(--gold);"></i>
+                Producción con enfoque sostenible
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         STATS
+    ══════════════════════════════════════════════════ -->
+    <section id="stats" aria-label="Estadísticas clave">
+      <div class="container">
+        <div class="stats-grid reveal" role="list">
+
+          <div class="stat-cell" role="listitem">
+            <div class="stat-num"
+                 data-count="8" data-suffix=""
+                 aria-label="8 frutales">0</div>
+            <div class="stat-lbl">Frutales<br>disponibles</div>
+          </div>
+
+          <div class="stat-cell" role="listitem">
+            <div class="stat-num"
+                 data-count="3" data-suffix=""
+                 aria-label="3 hortalizas">0</div>
+            <div class="stat-lbl">Hortalizas<br>para invernadero</div>
+          </div>
+
+          <div class="stat-cell" role="listitem">
+            <div class="stat-num"
+                 data-count="5" data-suffix=""
+                 aria-label="5 zonas de servicio">0</div>
+            <div class="stat-lbl">Zonas de<br>servicio</div>
+          </div>
+
+          <div class="stat-cell" role="listitem">
+            <div class="stat-num"
+                 data-count="1" data-suffix=""
+                 aria-label="1 atención directa">0</div>
+            <div class="stat-lbl">Atención<br>directa</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         SECTORES
+    ══════════════════════════════════════════════════ -->
+    <section id="sectores" aria-labelledby="sec-heading">
+      <div class="container">
+
+        <div class="sectores-hdr reveal">
+          <div class="label">Para quién es</div>
+          <h2 class="section-title" id="sec-heading">
+            Soluciones para <span class="gold">productores y agroindustria</span>
+          </h2>
+          <p>Atendemos necesidades agrícolas reales con enfoque técnico, práctico y sostenible.</p>
+        </div>
+
+        <div class="sectores-grid" role="list">
+          <div class="sector-card reveal" role="listitem">
+            <i class="fa-solid fa-tractor sector-icon" aria-hidden="true"></i>
+            <h3>Agricultores</h3>
+          </div>
+          <div class="sector-card reveal d1" role="listitem">
+            <i class="fa-solid fa-seedling sector-icon" aria-hidden="true"></i>
+            <h3>Viveros</h3>
+          </div>
+          <div class="sector-card reveal d2" role="listitem">
+            <i class="fa-solid fa-warehouse sector-icon" aria-hidden="true"></i>
+            <h3>Invernaderos</h3>
+          </div>
+          <div class="sector-card reveal d3" role="listitem">
+            <i class="fa-solid fa-industry sector-icon" aria-hidden="true"></i>
+            <h3>Agroindustria</h3>
+          </div>
+          <div class="sector-card reveal d4" role="listitem">
+            <i class="fa-solid fa-map-location-dot sector-icon" aria-hidden="true"></i>
+            <h3>Proyectos regionales</h3>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         CONTACTO
+    ══════════════════════════════════════════════════ -->
+    <section id="contacto" aria-labelledby="contact-heading">
+      <div class="container">
+
+        <div class="contact-hdr reveal">
+          <div class="label">Contacto</div>
+          <h2 class="section-title" id="contact-heading">
+            Hablemos de <span class="gold">tu proyecto agrícola</span>
+          </h2>
+          <p>Cuéntanos qué cultivo o plántula necesitas y recibe orientación directa de INGESA.</p>
+        </div>
+
+        <div class="contact-box reveal">
+
+          <!-- Info panel -->
+          <div class="contact-info">
+            <h3>Atención Personalizada</h3>
+            <p class="ci-sub">Ingeniería en Soluciones Agrícolas para productores de Oaxaca, Puebla y zonas cercanas.</p>
+
+            <ul class="ci-list">
+              <li class="ci-item">
+                <div class="ci-icon" aria-hidden="true">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="ci-body">
+                  <h4>Ubicación</h4>
+                  <p>Calle Manuel Doblado #8,<br>
+                     Col. Centro, 68600<br>
+                     San Juan Bautista Cuicatlán, Oaxaca.</p>
+                </div>
+              </li>
+              <li class="ci-item">
+                <div class="ci-icon" aria-hidden="true">
+                  <i class="fa-solid fa-map"></i>
+                </div>
+                <div class="ci-body">
+                  <h4>Área de servicio</h4>
+                  <p>Teotitlán de Flores Magón, Zoquitlán, San Juan Bautista Cuicatlán, Coxcatlán y Ajalpan.</p>
+                </div>
+              </li>
+              <li class="ci-item">
+                <div class="ci-icon" aria-hidden="true">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="ci-body">
+                  <h4>Celular</h4>
+                  <p>
+                    <a href="tel:+529513626643">951 362 6643</a>
+                  </p>
+                </div>
+              </li>
+              <li class="ci-item">
+                <div class="ci-icon" aria-hidden="true">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="ci-body">
+                  <h4>Correo electrónico</h4>
+                  <p><a href="mailto:gregorio1026@hotmail.com">gregorio1026@hotmail.com</a></p>
+                </div>
+              </li>
+              <li class="ci-item">
+                <div class="ci-icon" aria-hidden="true">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="ci-body">
+                  <h4>WhatsApp</h4>
+                  <p>Escríbenos y cotizamos tu proyecto agrícola.</p>
+                  <a href="https://wa.me/529513626643" target="_blank"
+                     rel="noopener noreferrer" class="ci-wa-link">
+                    Abrir chat →
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div><!-- /.contact-info -->
+
+          <!-- Form -->
+          <div class="contact-form-wrap">
+            <h3>Solicitar Cotización</h3>
+            <form id="wa-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="f-name">Nombre completo</label>
+                  <input type="text" id="f-name" class="form-control"
+                         placeholder="Ej. Nombre Apellido" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="f-interest">¿Qué necesitas?</label>
+                  <select id="f-interest" class="form-control">
+                    <option>Cotización general</option>
+                    <option>Proyecto de aguacate Hass</option>
+                    <option>Proyecto de frutales</option>
+                    <option>Plántulas de jitomate</option>
+                    <option>Plántulas de cebolla</option>
+                    <option>Plántulas de chile</option>
+                    <option>Asesoría agrícola</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-msg">Detalle del proyecto</label>
+                <textarea id="f-msg" class="form-control" rows="4" required
+                          placeholder="Describe tu cultivo, ubicación, cantidad o cualquier detalle relevante..."></textarea>
+              </div>
+              <button type="submit" class="form-submit">
+                <i class="fa-brands fa-whatsapp"></i>
+                Enviar a WhatsApp
+              </button>
+              <p class="form-note">
+                Al enviar serás redirigido a WhatsApp para continuar la conversación.
+              </p>
+            </form>
+          </div>
+
+        </div><!-- /.contact-box -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="assets/img/logo-ingesa.png" alt="">
+          <span>INGESA.</span>
+        </div>
+        <p class="footer-copy">
+          &copy; <span id="year"></span> INGESA. Todos los derechos reservados. San Juan Bautista Cuicatlán, Oaxaca.
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/solucionesagricolasing/"
+             target="_blank" rel="noopener noreferrer"
+             class="footer-soc" aria-label="Facebook de INGESA">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="mailto:gregorio1026@hotmail.com"
+             class="footer-soc" aria-label="Correo de INGESA">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://wa.me/529513626643" target="_blank"
+             rel="noopener noreferrer" class="footer-soc" aria-label="WhatsApp de INGESA">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════
+       FLOATING WHATSAPP
+  ══════════════════════════════════════════════════════ -->
+  <a href="https://wa.me/529513626643?text=Hola%2C%20visit%C3%A9%20el%20sitio%20web%20de%20INGESA%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto%20agr%C3%ADcola."
+     target="_blank" rel="noopener noreferrer"
+     class="wa-btn" aria-label="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>
