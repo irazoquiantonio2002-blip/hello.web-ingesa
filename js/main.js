@@ -1,5 +1,41 @@
 const WHATSAPP_NUMBER = "529513626643";
 
+const DETAIL_PLACEHOLDERS = {
+  "Aguacate Hass (Nutrición y Manejo)": "Ej. 250 árboles de 1 a 3 años, requiero plan de nutrición para amarre de fruto...",
+  "Café (Sanidad y Vivero)": "Ej. 1.5 hectáreas, problemas con plagas y deficiencia nutricional...",
+  "Plántulas de Jitomate": "Ej. Cotización de 3,000 plántulas para trasplante en octubre...",
+  "Invernaderos (Construcción o Mantenimiento)": "Ej. Cambio de plástico térmico y mallas en estructura de 1,000 m²...",
+  "Asesoría Integral / Diagnóstico General": "Ej. Cuéntanos brevemente tu cultivo, superficie y necesidad principal..."
+};
+
+const WHATSAPP_TEMPLATES = {
+  "Aguacate Hass (Nutrición y Manejo)": {
+    intro: "¡Hola, equipo de INGESA! Solicito asesoría técnica para mi huerta de aguacate Hass.",
+    detailLabel: "Número de árboles / Hectáreas",
+    closing: "Quedo a la espera de su respuesta."
+  },
+  "Café (Sanidad y Vivero)": {
+    intro: "¡Hola, equipo de INGESA! Me interesa asistencia técnica para cultivo de café.",
+    detailLabel: "Número de plantas / Superficie",
+    closing: "Agradezco su atención."
+  },
+  "Plántulas de Jitomate": {
+    intro: "¡Hola, equipo de INGESA! Busco cotizar plántula e insumos para jitomate.",
+    detailLabel: "Superficie / Densidad",
+    closing: "Quedo atento a la cotización."
+  },
+  "Invernaderos (Construcción o Mantenimiento)": {
+    intro: "¡Hola, equipo de INGESA! Solicito cotización para proyecto de invernadero.",
+    detailLabel: "Medidas aproximadas",
+    closing: "Espero su orientación técnica, gracias."
+  },
+  "Asesoría Integral / Diagnóstico General": {
+    intro: "¡Hola, equipo de INGESA! Me interesa recibir información y cotización para mi proyecto agrícola.",
+    detailLabel: "Cultivo / Proyecto",
+    closing: "Quedo atento a su respuesta, gracias."
+  }
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   initLoader();
   initNavbar();
@@ -8,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initStats();
   initHeroCanvas();
   initWhatsAppForm();
+  initGallery();
   setFooterYear();
 });
 
@@ -217,31 +254,128 @@ function initWhatsAppForm() {
   const form = document.getElementById("wa-form");
   if (!form) return;
 
+  const name = document.getElementById("f-name");
+  const phone = document.getElementById("f-phone");
+  const location = document.getElementById("f-location");
+  const interest = document.getElementById("f-interest");
+  const detail = document.getElementById("f-detail");
+  const message = document.getElementById("f-msg");
+
+  const syncDetailPlaceholder = () => {
+    if (!interest || !detail) return;
+    detail.placeholder = DETAIL_PLACEHOLDERS[interest.value] || "";
+  };
+
+  if (interest && detail) {
+    interest.addEventListener("change", syncDetailPlaceholder);
+    syncDetailPlaceholder();
+  }
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const name = document.getElementById("f-name");
-    const interest = document.getElementById("f-interest");
-    const message = document.getElementById("f-msg");
+    const requiredFields = [name, phone];
+    const missing = requiredFields.filter((field) => field && !field.value.trim());
 
-    if (!name.value.trim() || !message.value.trim()) {
-      [name, message].forEach((field) => {
-        if (!field.value.trim()) field.focus();
-      });
+    if (missing.length) {
+      missing.forEach((field) => field.focus());
       form.reportValidity();
       return;
     }
 
-    const text = [
-      "Hola, visité el sitio web de INGESA y quiero solicitar una cotización.",
-      `Nombre: ${name.value.trim()}`,
-      `Interés: ${interest.value}`,
-      `Detalle: ${message.value.trim()}`
-    ].join("\n");
+    const template = WHATSAPP_TEMPLATES[interest.value] || WHATSAPP_TEMPLATES["Asesoría Integral / Diagnóstico General"];
 
+    const lines = [
+      template.intro,
+      `Nombre: ${name.value.trim()}`,
+      `Teléfono: ${phone.value.trim()}`,
+      `Ubicación: ${location.value.trim() || "No especificada"}`
+    ];
+
+    if (detail.value.trim()) {
+      lines.push(`${template.detailLabel}: ${detail.value.trim()}`);
+    }
+
+    if (message.value.trim()) {
+      lines.push(`Mensaje: ${message.value.trim()}`);
+    }
+
+    lines.push(template.closing);
+
+    const text = lines.join("\n");
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank", "noopener,noreferrer");
     form.reset();
+    syncDetailPlaceholder();
+  });
+}
+
+function initGallery() {
+  const thumbs = Array.from(document.querySelectorAll(".gal-thumb"));
+  const lightbox = document.getElementById("lightbox");
+  if (!thumbs.length || !lightbox) return;
+
+  const lbImg = lightbox.querySelector(".lb-img");
+  const btnClose = lightbox.querySelector(".lb-close");
+  const btnPrev = lightbox.querySelector(".lb-prev");
+  const btnNext = lightbox.querySelector(".lb-next");
+
+  let activeGroup = [];
+  let activeIndex = 0;
+
+  const show = () => {
+    const thumb = activeGroup[activeIndex];
+    if (!thumb) return;
+    lbImg.src = thumb.dataset.full;
+    lbImg.alt = thumb.querySelector("img").alt;
+  };
+
+  const open = (groupThumbs, index) => {
+    activeGroup = groupThumbs;
+    activeIndex = index;
+    show();
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("no-scroll");
+    btnClose.focus();
+  };
+
+  const close = () => {
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("no-scroll");
+    lbImg.src = "";
+  };
+
+  const step = (delta) => {
+    if (!activeGroup.length) return;
+    activeIndex = (activeIndex + delta + activeGroup.length) % activeGroup.length;
+    show();
+  };
+
+  thumbs.forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      const group = thumb.closest("[data-gallery]");
+      const groupThumbs = group
+        ? Array.from(group.querySelectorAll(".gal-thumb"))
+        : thumbs;
+      open(groupThumbs, groupThumbs.indexOf(thumb));
+    });
+  });
+
+  btnClose.addEventListener("click", close);
+  btnPrev.addEventListener("click", () => step(-1));
+  btnNext.addEventListener("click", () => step(1));
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) close();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox.classList.contains("is-open")) return;
+    if (event.key === "Escape") close();
+    if (event.key === "ArrowLeft") step(-1);
+    if (event.key === "ArrowRight") step(1);
   });
 }
 
